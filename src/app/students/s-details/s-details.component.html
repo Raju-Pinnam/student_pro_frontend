@@ -1,0 +1,9 @@
+<div *ngIf="student; else noStudent">
+  {{student.name}}<br>
+  {{student.address_line1}}<br>
+  {{student.phone_number}}<br>
+  {{student.state}}
+</div>
+<ng-template #noStudent>
+  Click on student or new student
+</ng-template>

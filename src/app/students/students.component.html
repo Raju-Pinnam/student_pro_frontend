@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="col-5">
+      <app-s-list [students]="students_list"
+                  (clicked_student)="passStudentDetailsFunc($event)"
+                  (edit_student)="editStudentFunc($event)"
+                  (create_student)="createStudent($event)"
+                  (delete_student)="deleteStudent($event)"
+      >
+      </app-s-list>
+    </div>
+    <div class="col-7">
+      <app-s-form
+        *ngIf="create_student || edit_student"
+        [studentData]="edit_student" (studentChange)="checkStudentData($event)"></app-s-form>
+      <app-s-details
+        *ngIf="!(create_student || edit_student)"
+        [student]="selected_student"
+      ></app-s-details>
+    </div>
+  </div>
+</div>

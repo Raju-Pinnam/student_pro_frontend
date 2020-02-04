@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-12">
+    <button type="button" class="btn btn-success" (click)="createStudentFunc()">Add new Student</button>
+  </div>
+</div>
+<div class="row mt-2">
+  <div class="col-12">
+    <div *ngFor="let student of students">
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-8" (click)="clickedOnStudentFunc(student)" style="cursor:pointer;">
+              {{student.name}}
+            </div>
+            <div class="col-4 pull-right">
+              <button type="button" class="btn" (click)="editStudentFunc(student)">
+                <i class="fa fa-edit"></i>
+              </button>
+
+              <button type="button"  class="btn" (click)="deleteStudentFunc(student)">
+                <i class="fa fa-trash-o"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
